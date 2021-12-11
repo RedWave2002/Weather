@@ -12,22 +12,19 @@ jobs:
     steps:
       # 首先copy git仓库到虚拟机上
       - name: 'Checkout codes'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         
-      # 设置python环境  
+      # 设置python环境
       - name: 'Set up Python 3.7'
         uses: actions/setup-python@v1
         with: 
           python-version: 3.7
       
-      # 安装py依赖
+      # 安装依赖&运行脚本
       - name: 'Install requirements'
         run: | 
           # python3 -m pip install --upgrade pip
           # python3 -m pip install --upgrade setuptools
           pip install bs4
           pip install requests
-          
-      # 运行py脚本
-      - name: 'Run py scripts'
-        run: python3 Weather.py
+          python3 Weather.py
