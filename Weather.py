@@ -14,7 +14,7 @@ def main():
     }
     url2 = 'https://qmsg.zendee.cn/send/' + KEY    # 私聊消息推送接口
 
-    response = requests.post(url2, data = data, timeout)
+    response = requests.post(url2, data = data)
 
 if __name__ == "__main__":
     main()
