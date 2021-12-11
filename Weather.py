@@ -9,6 +9,7 @@ import re                      # 正则表达式，进行文字匹配
 import urllib.request          # 指定url，获取网页数据
 import urllib.error            # urllib error
 import requests
+import random
 
 
 def main():
