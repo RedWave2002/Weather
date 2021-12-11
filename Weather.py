@@ -10,7 +10,6 @@ import urllib.request          # 指定url，获取网页数据
 import urllib.error            # urllib error
 import requests
 import random
-import time
 
 
 def main():
@@ -41,7 +40,7 @@ def get_data(url):
     req = urllib.request.Request(url, headers = headers)
     html = ""
     try:
-        res = urllib.request.urlopen(req, timeout = 5)
+        res = urllib.request.urlopen(req)
         html = res.read().decode('UTF-8')
 
     except urllib.error.URLError as e:
@@ -60,7 +59,7 @@ def get_data(url):
 
 def send_msg(msg1, msg2, qq):
     m = "早上好呀~" + '\n' + "现在是" + msg1[0] + ' ' + msg1[1] + '\n' + "今日天气：" + '\n' + "宜昌 " + msg1[2] + '\n' + "武汉 " + msg2[2]
-    KEY = '0a5ba7b9077b55eb38ccad4c70730c3d'
+    KEY = 'ada531e9a634fca7aebb4efa873d0ad4'
     data = {
         "msg": m,           # 需要发送的消息
         "qq": qq            # 需要接收消息的QQ号码
@@ -68,7 +67,7 @@ def send_msg(msg1, msg2, qq):
     url = 'https://qmsg.zendee.cn/group/' + KEY    # 群消息推送接口
     # url2 = 'https://qmsg.zendee.cn/send/' + KEY  # 私聊消息推送接口
 
-    response = requests.post(url, data = data, timeout = 5)
+    response = requests.post(url, data = data)
     # response = requests.post(url2, data = data)
 
 def manage_str(str):
