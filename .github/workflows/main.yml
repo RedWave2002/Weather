@@ -4,7 +4,7 @@ on:
   push:
   schedule:
   # 定时任务，在每天的8点运行
-    - cron: '23 3 * * *'
+    - cron: '25 3 * * *'
 
 jobs:
   bot:
@@ -16,10 +16,10 @@ jobs:
         
       # 设置python环境  
       - name: 'Set up Python 3.7'
-        uses: actions/setup-python@v1
+      - uses: actions/setup-python@v1
         with: 
           python-version: 3.7
           
       # 运行py脚本
       - name: 'Run py scripts'
-        run: python Weather.py
+      - run: python Weather.py
