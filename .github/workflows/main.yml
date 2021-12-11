@@ -4,7 +4,7 @@ on:
   push:
   schedule:
   # 定时任务，在每天的8点运行
-    - cron: '25 3 * * *'
+    - cron: '30 3 * * *'
 
 jobs:
   bot:
