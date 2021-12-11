@@ -9,8 +9,6 @@ import re                      # 正则表达式，进行文字匹配
 import urllib.request          # 指定url，获取网页数据
 import urllib.error            # urllib error
 import requests
-import schedule
-import time
 
 
 def main():
@@ -76,11 +74,5 @@ def manage_str(str):
     data.append(weather)
     return data
 
-
-# schedule.every().day.at("08:00").do(main())
-#
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
 if __name__ == "__main__":
     main()
