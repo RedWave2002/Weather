@@ -23,8 +23,8 @@ jobs:
       # 安装py依赖
       - name: 'Install requirements'
         run: | 
-          python3 -m pip install --upgrade pip setuptools wheel 
-          python3 -m pip install -r requirements.txt
+          python3 -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip setuptools
           pyhton3 -m pip install bs4
           
       # 运行py脚本
