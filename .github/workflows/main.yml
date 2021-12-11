@@ -4,7 +4,7 @@ on:
   push:
   schedule:
   # 定时任务，在每天的8点运行
-    - cron: '42 3 * * *'
+    - cron: '46 3 * * *'
 
 jobs:
   bot:
@@ -24,8 +24,8 @@ jobs:
       - name: 'Install requirements'
         run: | 
           python3 -m pip install --upgrade pip
-          python3 -m pip install --upgrade pip setuptools
-          pyhton3 -m pip install bs4
+          python3 -m pip install --upgrade setuptools
+          pip install bs4
           
       # 运行py脚本
       - name: 'Run py scripts'
