@@ -20,11 +20,14 @@ jobs:
         with: 
           python-version: 3.7
       
-      # 安装依赖&运行脚本
+      # 安装依赖
       - name: 'Install requirements'
         run: | 
-          # python3 -m pip install --upgrade pip
-          # python3 -m pip install --upgrade setuptools
+          python3 -m pip install --upgrade pip
+          python3 -m pip install --upgrade setuptools
           pip install bs4
           pip install requests
-          python3 Weather.py
+          
+      # 运行脚本
+      - name: 'Run scripts'
+        run: python3 Weather.py
