@@ -20,10 +20,10 @@ def main():
     data_yc = manage_str(yc)
     data_wh = manage_str(wh)
     qq1 = "794935952"
-    # qq2 = "1961456079"
+#     qq2 = "1961456079"
 
     send_msg(data_yc, data_wh, qq1)
-    # send_msg(data_yc, data_wh, qq2)
+#     send_msg(data_yc, data_wh, qq2)
 
 
 def get_data(url):
@@ -60,15 +60,20 @@ def get_data(url):
 def send_msg(msg1, msg2, qq):
     m = "早上好呀~" + '\n' + "现在是" + msg1[0] + ' ' + msg1[1] + '\n' + "今日天气：" + '\n' + "宜昌 " + msg1[2] + '\n' + "武汉 " + msg2[2]
     KEY = 'ada531e9a634fca7aebb4efa873d0ad4'
-    data = {
-        "msg": m,           # 需要发送的消息
-        "qq": qq            # 需要接收消息的QQ号码
-    }
-    url = 'https://qmsg.zendee.cn/group/' + KEY    # 群消息推送接口
-    # url2 = 'https://qmsg.zendee.cn/send/' + KEY  # 私聊消息推送接口
+#     data = {
+#         "msg": m,           # 需要发送的消息
+#         "qq": qq            # 需要接收消息的QQ号码
+#     }
+#     url = 'https://qmsg.zendee.cn/group/' + KEY    # 群消息推送接口
+    
+    sentMsg(m);
+#     response = requests.post(url, data = data)
+#     response = requests.post(url2, data = data)
 
-    response = requests.post(url, data = data)
-    # response = requests.post(url2, data = data)
+def sentMsg(msg):
+    headers = {'Content-Type': 'application/json;charset=utf-8'}
+    api_url = "https://qmsg.zendee.cn/group/ada531e9a634fca7aebb4efa873d0ad4?msg= %s" % msg
+    return requests.post(api_url, headers=headers, timeout=None).content
 
 def manage_str(str):
     data = []
