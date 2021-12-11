@@ -12,11 +12,9 @@ def main():
         "msg": m,           # 需要发送的消息
         "qq": "1961456079"  # 需要接收消息的QQ号码
     }
-    # url = 'https://qmsg.zendee.cn/group/' + KEY    # 群消息推送接口
     url2 = 'https://qmsg.zendee.cn/send/' + KEY    # 私聊消息推送接口
 
-    # response = requests.post(url, data = data, timeout = 5)
-    response = requests.post(url2, data = data, timeout = 5)
+    response = requests.post(url2, data = data, timeout)
 
 if __name__ == "__main__":
     main()
