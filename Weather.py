@@ -10,6 +10,7 @@ import urllib.request          # 指定url，获取网页数据
 import urllib.error            # urllib error
 import requests
 import random
+import time
 
 
 def main():
@@ -40,7 +41,7 @@ def get_data(url):
     req = urllib.request.Request(url, headers = headers)
     html = ""
     try:
-        res = urllib.request.urlopen(req)
+        res = urllib.request.urlopen(req, timeout = 5)
         html = res.read().decode('UTF-8')
 
     except urllib.error.URLError as e:
