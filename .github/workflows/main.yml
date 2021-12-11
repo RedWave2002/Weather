@@ -1,0 +1,25 @@
+name: Weather report action
+
+on:
+  push:
+  schedule:
+  # 定时任务，在每天的8点运行
+    - cron: '0 0 * * *'
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      # 首先copy git仓库到虚拟机上
+      - name: 'Checkout codes'
+      - uses: actions/checkout@v2
+        
+      # 设置python环境  
+      - name: 'Set up Python 3.7'
+        uses: actions/setup-python@v1
+        with: 
+          python-version: 3.7
+          
+      # 运行py脚本
+      - name: 'Run py scripts'
+        run: python Weather.py
