@@ -1,10 +1,11 @@
 name: Weather report action
 
 on:
-  push:
-  schedule:
-  # 定时任务，在每天的8点运行
-    - cron: '10 2 * * *'
+  workflow_dispatch:
+#   push:
+#   schedule:
+#   # 定时任务，在每天的8点运行
+#     - cron: '10 2 * * *'
 
 jobs:
   bot:
