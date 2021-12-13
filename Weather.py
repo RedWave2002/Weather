@@ -72,7 +72,7 @@ def send_msg(msg1, msg2, qq):
 
 def sentMsg(msg):
     headers = {'Content-Type': 'application/json;charset=utf-8'}
-    api_url = "https://qmsg.zendee.cn/send/ada531e9a634fca7aebb4efa873d0ad4?msg= %s" % msg
+    api_url = "https://qmsg.zendee.cn/group/ada531e9a634fca7aebb4efa873d0ad4?msg= %s" % msg
     return requests.post(api_url, headers=headers, timeout=None).content
 
 def manage_str(str):
